@@ -10,19 +10,8 @@ var bodyParser = require('body-parser');
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 //connect to salesforce
-var org=nforce.createConnection({
-	clientId:process.env.ConsumerKey,
-	cllentSecret:process.env.ConsumerSecret,
-	redirectUri:'http://localhost:3000/oauth/_callback',
-	mode:'single'
-	});
-	org.authenicate({username:sfuser,password:sfpass},function(err,resp){
-	if(!err){
-	console.log('connected')
-	}else{
-	console.log('Error connecting to salesforce' + err.message);
-	}
-	});
+console.log('sfuser'+sfuser);
+console.log('sfpass'+sfpass);
 
 // POST http://localhost:8080/api/users
 // parameters sent with 
