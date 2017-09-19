@@ -1,6 +1,8 @@
 // grab the packages we need
 var express = require('express');
 var app = express();
+var sfuser=process.env.SFUSER;
+var sfpass= pass.env.SFPASS;
 var port = process.env.PORT || 3000;
 var bodyParser = require('body-parser');
 app.use(bodyParser.json()); // support json encoded bodies
@@ -15,6 +17,18 @@ app.put('/api/users', function(req, res) {
    console.log('tempreading'+tempreading);
 
     res.send(tempreading);
+	var org=nforce.createConnection({
+	clientId:process.env.ConsumerKey,
+	cllentSecret:process.env.ConsumerSecret,
+	redirectUri:'http://localhost:3000/oauth/_callback',
+	mode:'single'
+	});
+	org.authenicate({username:sfuser,password:sfpass},function(err,resp){
+	if(!err){
+	console.log('connected')
+	}else{
+	console.log('Error connecting to salesforce' + err.message);
+	}
 });
 
 // start the server
