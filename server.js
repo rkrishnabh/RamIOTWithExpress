@@ -1,8 +1,6 @@
 // grab the packages we need
 var express = require('express');
 var app = express();
-var sfuser=process.env.SFUSER;
-var sfpass= pass.env.SFPASS;
 var port = process.env.PORT || 3000;
 var bodyParser = require('body-parser');
 app.use(bodyParser.json()); // support json encoded bodies
@@ -17,7 +15,6 @@ app.put('/api/users', function(req, res) {
    console.log('tempreading'+tempreading);
 
     res.send(tempreading);
-	
 });
 
 // start the server
