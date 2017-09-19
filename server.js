@@ -17,18 +17,7 @@ app.put('/api/users', function(req, res) {
    console.log('tempreading'+tempreading);
 
     res.send(tempreading);
-	var org=nforce.createConnection({
-	clientId:process.env.ConsumerKey,
-	cllentSecret:process.env.ConsumerSecret,
-	redirectUri:'http://localhost:3000/oauth/_callback',
-	mode:'single'
-	});
-	org.authenicate({username:sfuser,password:sfpass},function(err,resp){
-	if(!err){
-	console.log('connected')
-	}else{
-	console.log('Error connecting to salesforce' + err.message);
-	}
+	
 });
 
 // start the server
