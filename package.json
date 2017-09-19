@@ -1,0 +1,7 @@
+{
+  "name": "iocnodedemo",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.15.4"
+  }
+}
