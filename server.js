@@ -3,7 +3,7 @@ var express = require('express');
 var nforce =require('nforce');
 var app = express();
 var sfuser=process.env.SFUSER;
-var sfpass= pass.env.SFPASS;
+var sfpass= process.env.SFPASS;
 
 var port = process.env.PORT || 3000;
 var bodyParser = require('body-parser');
